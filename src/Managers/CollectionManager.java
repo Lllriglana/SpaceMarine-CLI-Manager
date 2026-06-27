@@ -35,7 +35,7 @@ public class CollectionManager {
         // буду в main делать
     }
 
-    public void remove_by_id(int tempID, String br) {
+    public void remove_by_id(int tempID) {
         for (SpaceMarine num : list) {
             if (num.getId() == tempID) {
                 list.remove(tempID - 1);

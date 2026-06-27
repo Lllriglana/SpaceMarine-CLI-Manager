@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import Commands.CommandHelp;
 import Exception.ValidationException;
 import Managers.CollectionManager;
 
@@ -12,21 +13,21 @@ public class Main {
         CollectionManager marine = new CollectionManager();
         CommandHelp help = new CommandHelp();
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        String val = ""; 
+        String input = ""; 
         
         System.out.println("Введите help, чтобы получить список доступных команд");
 
         while(true) {
             System.out.print("> ");
             try {
-                val = br.readLine().trim();
+                input = br.readLine().trim();
             } catch (NumberFormatException e) {
                 System.out.println("Не правильный формат ввода");
             }
 
-            if ("exit".equals(val)) { break; }
+            if ("exit".equals(input)) { break; }
 
-            switch(val) {
+            switch(input) {
                 case "help":
                     help.help();
                 break;

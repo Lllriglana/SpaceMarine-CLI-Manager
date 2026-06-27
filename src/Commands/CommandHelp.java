@@ -1,6 +1,8 @@
-public class CommandHelp {
+package Commands;
+public class CommandHelp implements Command {
 
-    public void help() {
+    @Override
+    public void execute(String[] args) {
         System.out.print("""
         === ДОСТУПНЫЕ КОМАНДЫ ===
         help - справка 
