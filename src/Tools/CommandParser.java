@@ -10,9 +10,9 @@ public class CommandParser {
             return null;
         }
 
-        String[] token = input.strip().split("\\s+");
-        String commandName = token[0];
-        String[] commandArgs = Arrays.copyOfRange(token, 1, token.length);
+        String[] tokens = input.strip().split("\\s+");
+        String commandName = tokens[0];
+        String[] commandArgs = Arrays.copyOfRange(tokens, 1, tokens.length);
 
         return new ParsedCommand(commandName, commandArgs);
     }
