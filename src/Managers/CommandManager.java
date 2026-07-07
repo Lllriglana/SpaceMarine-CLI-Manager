@@ -4,7 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import Commands.Command;
 
-public class Invoker {
+/**
+ * Invoker class
+ */
+
+public class CommandManager {
     private final Map<String, Command> commandBox = new HashMap<>();
 
     public void register(String commandName, Command command) {

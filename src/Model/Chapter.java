@@ -1,5 +1,7 @@
 package Model;
 
+import java.util.Objects;
+
 public class Chapter {
     private String name;
     private int marinesCount;
@@ -12,7 +14,7 @@ public class Chapter {
     }
 
     public void setName(String name) {
-        if (!name.equals("")) {
+        if (!name.isBlank() && name != null) {
             this.name = name;
         } else System.out.println("Пустая строка");
     }
@@ -31,8 +33,22 @@ public class Chapter {
         return marinesCount;
     }
 
+
     @Override
     public String toString() {
-        return "{ Name: " + name + "; Year: " + marinesCount + " }"; 
+        return "Chapter [name=" + name + ", marinesCount=" + marinesCount + "]";
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Chapter chapter)) return false;
+        return marinesCount == chapter.marinesCount &&
+                Objects.equals(name, chapter.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, marinesCount);
     }
 }

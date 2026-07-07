@@ -1,4 +1,4 @@
-package NewMain;
+package AboutMain;
 import Model.*;
 
 import java.io.BufferedReader;

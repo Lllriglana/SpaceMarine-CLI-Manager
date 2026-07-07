@@ -37,9 +37,37 @@ public class Coordinates {
     private float getY() {
         return y;
     }
-    
+
     @Override
     public String toString() {
-        return "{ " + x + " ; " + y + " }";
+        return "Coordinates [x=" + x + ", y=" + y + "]";
     }
+
+        @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+        if (getClass() != obj.getClass())
+            return false;
+        Coordinates other = (Coordinates) obj;
+        if (Double.doubleToLongBits(x) != Double.doubleToLongBits(other.x))
+            return false;
+        if (Float.floatToIntBits(y) != Float.floatToIntBits(other.y))
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int result = 1;
+        long temp;
+        temp = Double.doubleToLongBits(x);
+        result = prime * result + (int) (temp ^ (temp >>> 32));
+        result = prime * result + Float.floatToIntBits(y);
+        return result;
+    }
+    
 }

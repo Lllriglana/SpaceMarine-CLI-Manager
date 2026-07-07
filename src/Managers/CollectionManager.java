@@ -1,51 +1,41 @@
 package Managers;
 
 import java.time.ZonedDateTime;
+import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
 import Model.SpaceMarine;
 
 public class CollectionManager {
-    private final List<SpaceMarine> list;
+    private final List<SpaceMarine> collecton;
     private final ZonedDateTime initTime;
-    private int nextId;
     
     public CollectionManager() {
-        this.list = new LinkedList<SpaceMarine>();
+        this.collecton = new LinkedList<SpaceMarine>();
         this.initTime = ZonedDateTime.now();
-        nextId = 1;
     }
 
     public synchronized void add(SpaceMarine marine) {
-        marine.setId(generateId());
-        list.add(marine);
+        collecton.add(marine);
+    }
+
+    public void shuffle() {
+        Collections.shuffle(collecton);
     }
 
     public int generateId() {
-        return nextId++;
-    }
-
-    public void show() {
-        System.out.println(list);
-    }
-
-    public void updateId(int tempID) {
-        remove_by_id(tempID);
-        // буду в main делать
-    }
-
-    public void remove_by_id(int tempID) {
-        for (SpaceMarine num : list) {
-            if (num.getId() == tempID) {
-                list.remove(tempID - 1);
-                break;
+        if (collecton.isEmpty()) {
+            return 1;
+        }
+        
+        int maxId = 0;
+        
+        for (SpaceMarine marine : collecton) {
+            if (marine.getId() > maxId) {
+                maxId = marine.getId();
             }
-        };
-    }
-
-    @Override // не обязательная штука, но лан
-    public String toString() {
-        return list.toString();
+        }
+        return maxId + 1;
     }
 }
