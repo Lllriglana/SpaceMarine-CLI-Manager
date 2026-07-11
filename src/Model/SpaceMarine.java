@@ -8,20 +8,20 @@ import Tools.Validator;
 public class SpaceMarine implements Comparable {
     private int id;
     private String name;
-    private Coordinates coordinates = new Coordinates();
+    private Coordinates coordinates;
     private LocalDate creationDate;
-    private double healh;
+    private double health;
     private AstartesCategory category;
     private Weapon weapon;
     private MeleeWeapon meleeWeapon;
-    private Chapter chapter = new Chapter();
+    private Chapter chapter;
 
     public SpaceMarine(
         int id,
         String name,
         Coordinates coordinates,
         LocalDate creationDate,
-        double healh,
+        double health,
         AstartesCategory category,
         Weapon weapon,
         MeleeWeapon meleeWeapon,
@@ -31,7 +31,7 @@ public class SpaceMarine implements Comparable {
         this.name = Validator.requireSpecial(name, "Name");
         this.coordinates = Validator.requireSpecial(coordinates, "Coordinates");
         this.creationDate = Validator.requireSpecial(creationDate, "Creation Date");
-        this.healh = Validator.healhRequireGreaterThanZero(healh, "Healh");
+        this.health = Validator.healthRequireGreaterThanZero(health, "Health");
         this.category = category;
         this.weapon = weapon;
         this.meleeWeapon = meleeWeapon;
@@ -54,8 +54,8 @@ public class SpaceMarine implements Comparable {
         return creationDate;
     }
 
-    public double getHealh() {
-        return healh;
+    public double getHealth() {
+        return health;
     }
 
     public AstartesCategory getCategory() {
@@ -77,7 +77,7 @@ public class SpaceMarine implements Comparable {
     @Override
     public String toString() {
         return "SpaceMarine [id=" + id + ", name=" + name + ", coordinates=" + coordinates + ", creationDate="
-                + creationDate + ", healh=" + healh + ", category=" + category + ", weapon=" + weapon + ", meleeWeapon="
+                + creationDate + ", healh=" + health + ", category=" + category + ", weapon=" + weapon + ", meleeWeapon="
                 + meleeWeapon + ", chapter=" + chapter + "]";
     }
 
@@ -91,7 +91,7 @@ public class SpaceMarine implements Comparable {
         result = prime * result + ((coordinates == null) ? 0 : coordinates.hashCode());
         result = prime * result + ((creationDate == null) ? 0 : creationDate.hashCode());
         long temp;
-        temp = Double.doubleToLongBits(healh);
+        temp = Double.doubleToLongBits(health);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         result = prime * result + ((category == null) ? 0 : category.hashCode());
         result = prime * result + ((weapon == null) ? 0 : weapon.hashCode());
@@ -126,7 +126,7 @@ public class SpaceMarine implements Comparable {
                 return false;
         } else if (!creationDate.equals(other.creationDate))
             return false;
-        if (Double.doubleToLongBits(healh) != Double.doubleToLongBits(other.healh))
+        if (Double.doubleToLongBits(health) != Double.doubleToLongBits(other.health))
             return false;
         if (category != other.category)
             return false;

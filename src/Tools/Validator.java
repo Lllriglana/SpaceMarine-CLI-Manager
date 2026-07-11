@@ -23,12 +23,13 @@ public class Validator {
         return val;
     }
 
-    public static double healhRequireGreaterThanZero(double healh, String fieldName) throws ValidationException {
-        if (healh <= 0) throw new ValidationException("Ошибка: поле '" + fieldName + "' должно быть больше нуля");
-        return healh;
+    public static double healthRequireGreaterThanZero(Double health, String fieldName) throws ValidationException { 
+        if (health == null) throw new ValidationException("Ошибка: поле '" + fieldName + "' не должно быть пустым");
+        if (health <= 0) throw new ValidationException("Ошибка: поле '" + fieldName + "' должно быть больше нуля");
+        return health;
     }
 
-    public static int requireNotNull(int val, String fieldName) throws ValidationException {
+    public static int requireNonZero(int val, String fieldName) throws ValidationException {
         if (val == 0) {
             throw new ValidationException("Ошибка: Поле '" + fieldName + "' не может равняться нулю");
         }

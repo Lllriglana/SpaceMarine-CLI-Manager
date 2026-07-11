@@ -7,15 +7,13 @@ public class Coordinates {
     private double x;
     private float y;
 
-    public Coordinates() {}
-
     public Coordinates(double x, float y) throws ValidationException {
         this.x = Validator.requireValidX(x);
         this.y = Validator.requireSpecial(y, "Координата Y");
     }
 
     public void setX(double x) {
-        if (x != 0 && x > -540) {
+        if (x > -540) {
             this.x = x;
         } else {
             System.out.println("Нельзя");
@@ -30,11 +28,11 @@ public class Coordinates {
         }
     }
     
-    private double getX() {
+    double getX() {
         return x;
     }
 
-    private float getY() {
+    float getY() {
         return y;
     }
 

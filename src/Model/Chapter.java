@@ -14,7 +14,7 @@ public class Chapter {
     }
 
     public void setName(String name) {
-        if (!name.isBlank() && name != null) {
+        if (name != null && !name.isBlank()) {
             this.name = name;
         } else System.out.println("Пустая строка");
     }
