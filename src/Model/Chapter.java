@@ -2,17 +2,19 @@ package Model;
 
 import java.util.Objects;
 
+import Exception.ValidationException;
+import Tools.Validator;
+
 public class Chapter {
     private String name;
     private int marinesCount;
-
-    public Chapter() {}
     
-    public Chapter(String name, int marinesCount) {
-        this.name = name;
-        this.marinesCount = marinesCount;
+    public Chapter(String name, int marinesCount) throws ValidationException {
+        this.name = Validator.requireSpecial(name, "Name");
+        this.marinesCount = Validator.requireLessOrEqual(marinesCount, 1000, "Marines Count");
     }
 
+/* 
     public void setName(String name) {
         if (name != null && !name.isBlank()) {
             this.name = name;
@@ -24,6 +26,7 @@ public class Chapter {
             this.marinesCount = marinesCount;
         } else System.out.println("Пустая строка");
     }
+*/
 
     public String getName() {
         return name;

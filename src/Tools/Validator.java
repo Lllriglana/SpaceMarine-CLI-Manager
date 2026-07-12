@@ -42,5 +42,13 @@ public class Validator {
         } else return object;
     }
 
-
+    public static int requireLessOrEqual(int val, int max, String fieldName) throws ValidationException {
+        if (val <= 0) {
+            throw new ValidationException("Ошибка: Поле '" + fieldName + "' должно быть больше нуля.");
+        }
+        if (val > max) {
+            throw new ValidationException("Ошибка: Поле '" + fieldName + "' должно быть больше " + max + ".");
+        }
+        return val;
+    }
 }

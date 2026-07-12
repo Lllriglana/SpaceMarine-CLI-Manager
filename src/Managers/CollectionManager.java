@@ -8,34 +8,33 @@ import java.util.List;
 import Model.SpaceMarine;
 
 public class CollectionManager {
-    private final List<SpaceMarine> collecton;
-    private final ZonedDateTime initTime;
+    private final List<SpaceMarine> collection = new LinkedList<>();;
+    private final ZonedDateTime initTime = ZonedDateTime.now();
+    private int nextId = 1;
+
     
-    public CollectionManager() {
-        this.collecton = new LinkedList<SpaceMarine>();
-        this.initTime = ZonedDateTime.now();
+    public CollectionManager() {}
+
+    public synchronized void add(SpaceMarine m) {
+        if (m.getId() <= 0) {
+            m.setId(nextId++);
+        } else {
+            if (m.getId() >= nextId) nextId = m.getId() + 1;
+        }
+        collection.add(m);
     }
 
-    public synchronized void add(SpaceMarine marine) {
-        collecton.add(marine);
+    public synchronized List<SpaceMarine> getAll() {
+        return new LinkedList<>(collection);
     }
 
     public void shuffle() {
-        Collections.shuffle(collecton);
+        Collections.shuffle(collection);
     }
 
-    public int generateId() {
-        if (collecton.isEmpty()) {
-            return 1;
-        }
-        
-        int maxId = 0;
-        
-        for (SpaceMarine marine : collecton) {
-            if (marine.getId() > maxId) {
-                maxId = marine.getId();
-            }
-        }
-        return maxId + 1;
+    public synchronized void syncNextId() {
+        int max = collection.stream().mapToInt(SpaceMarine::getId).max().orElse(0);
+        nextId = Math.max(nextId, max + 1);
     }
 }
+

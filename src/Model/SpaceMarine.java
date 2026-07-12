@@ -9,7 +9,7 @@ public class SpaceMarine implements Comparable {
     private int id;
     private String name;
     private Coordinates coordinates;
-    private LocalDate creationDate;
+    private final java.time.LocalDate creationDate;
     private double health;
     private AstartesCategory category;
     private Weapon weapon;
@@ -30,12 +30,16 @@ public class SpaceMarine implements Comparable {
         this.id = Validator.requireValidId(id);
         this.name = Validator.requireSpecial(name, "Name");
         this.coordinates = Validator.requireSpecial(coordinates, "Coordinates");
-        this.creationDate = Validator.requireSpecial(creationDate, "Creation Date");
+        this.creationDate = LocalDate.now();
         this.health = Validator.healthRequireGreaterThanZero(health, "Health");
         this.category = category;
         this.weapon = weapon;
         this.meleeWeapon = meleeWeapon;
         this.chapter = Validator.requireSpecial(chapter, "Chapter");
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
     
     public int getId() {
@@ -50,7 +54,7 @@ public class SpaceMarine implements Comparable {
         return coordinates;
     }
 
-    public LocalDate getCreationDate() {
+    public java.time.LocalDate getCreationDate() {
         return creationDate;
     }
 
