@@ -35,6 +35,7 @@ public class MainTest {
         System.out.println("[Лог] Вызвано аргументов: " + cmd.args().length);
 
         System.out.print("[Лог] Список аргументов: ");
+        if (cmd.args().length == 0) System.out.println("null");
         for (String m : cmd.args()) {
             System.out.print("'" + m + "'" + " ");
             if (m == cmd.args()[cmd.args().length - 1]) System.out.println();

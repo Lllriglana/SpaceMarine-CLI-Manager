@@ -66,20 +66,20 @@ public class oldMain {
                     System.out.print("MarinesCount: ");
                     int a7 = Integer.parseInt(br.readLine().trim());
 
-                    marine.add(new SpaceMarine(a1, a2, a3, a4, a5, a6, a7));
+                    //marine.add(new SpaceMarine(a1, a2, a3, a4, a5, a6, a7));
                     break;
                 case "show":
-                    marine.show();
+                    //marine.show();
                     break;
                 case "remove_by_id":
                     System.out.print("Введите id: ");
                     int remID = Integer.parseInt(br.readLine());
-                    marine.remove_by_id(remID);
+                    ///marine.remove_by_id(remID);
                     break;
                 case "update id":
                     System.out.print("Введите id: ");
                     int upID = Integer.parseInt(br.readLine());
-                    marine.updateId(upID);
+                    //marine.updateId(upID);
 
                     // add, но нужно инкапсуляцию реализовать :)
 

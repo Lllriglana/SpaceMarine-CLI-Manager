@@ -12,13 +12,13 @@ public class CollectionManager {
     private final ZonedDateTime initTime = ZonedDateTime.now();
     private int nextId = 1;
 
-    
     public CollectionManager() {}
 
     public synchronized void add(SpaceMarine m) {
         if (m.getId() <= 0) {
             m.setId(nextId++);
         } else {
+            m.setId(nextId);
             if (m.getId() >= nextId) nextId = m.getId() + 1;
         }
         collection.add(m);
