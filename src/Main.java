@@ -6,9 +6,10 @@ import Commands.CommandAdd;
 import Commands.CommandExit;
 import Commands.CommandHelp;
 import Commands.CommandShow;
-import Fast.InputManager;
+import Commands.CommandShuffle;
 import Managers.CollectionManager;
 import Managers.CommandManager; // местный инвокер
+import Managers.InputManager;
 import Tools.CommandParser;
 import Tools.ParsedCommand;
 
@@ -24,6 +25,8 @@ public class Main {
             commandManager.register("exit", new CommandExit());
             commandManager.register("add", new CommandAdd(inputManager, collectionManager));
             commandManager.register("show", new CommandShow(inputManager, collectionManager));
+            commandManager.register("shuffle", new CommandShuffle(inputManager, collectionManager));
+        
             while(true) {
                 System.out.print("> ");
                 String input = br.readLine();
@@ -37,6 +40,5 @@ public class Main {
         } catch (IOException e) {
                 System.out.println("Критическая ошибка " + e.getMessage());
         }
-
     }
 }

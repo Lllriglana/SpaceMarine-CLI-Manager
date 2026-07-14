@@ -1,7 +1,7 @@
 package Commands;
 
-import Fast.InputManager;
 import Managers.CollectionManager;
+import Managers.InputManager;
 
 public class CommandShow implements Command {
     InputManager inputManager;
