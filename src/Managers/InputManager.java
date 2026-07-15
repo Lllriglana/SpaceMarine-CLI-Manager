@@ -14,7 +14,7 @@ import Model.Weapon;
 import Tools.Validator;
 
 public class InputManager {
-    private final BufferedReader br; // TODO: нада узнать нужно ли закрывать ресурс
+    private final BufferedReader br;
 
     public InputManager(BufferedReader br) {
         this.br = br;
@@ -31,7 +31,7 @@ public class InputManager {
         MeleeWeapon meleeWeapon = askMeleeWeapon();
         Chapter chapter = askChapter();
         try {
-            return new SpaceMarine(1, Name, coordinates, null, health, astartesCategory, weapon, meleeWeapon, chapter); // TODO: id не проходит проверку сразу после рождения
+            return new SpaceMarine(1, Name, coordinates, null, health, astartesCategory, weapon, meleeWeapon, chapter); 
         } catch (Exception e) {
             System.out.println("Критическая ошибка сборки: " + e.getMessage());
         }
@@ -128,7 +128,7 @@ public class InputManager {
         }
     }
 
-        private MeleeWeapon askMeleeWeapon() {
+    private MeleeWeapon askMeleeWeapon() {
         while (true) {
             try {
                 System.out.print("Введите тип орижия ближнего боя солдата(CHAIN_AXE, LIGHTING_CLAW, LIGHTING_CLAW, POWER_FIST): ");
@@ -149,10 +149,14 @@ public class InputManager {
         while (true) {
             try {
                 System.out.print("Введите название ордена: ");
-                String inputName = br.readLine();
+                String inputName = br.readLine().trim();
+                
+                if (inputName.isBlank()) {
+                    throw new ValidationException("Имя не может быть пустым");
+                }
 
                 System.out.print("Общая численность братьев по оружию в этом ордене: ");
-                int inputMarinesCount = Integer.parseInt(br.readLine());
+                int inputMarinesCount = Integer.parseInt(br.readLine().trim());
 
                 return new Chapter(inputName, inputMarinesCount);
             } catch (NumberFormatException e) {
@@ -164,7 +168,6 @@ public class InputManager {
             }
         }
     }
-
 
 }
 

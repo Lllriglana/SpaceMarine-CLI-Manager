@@ -3,8 +3,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import Commands.CommandAdd;
+import Commands.CommandClear;
 import Commands.CommandExit;
 import Commands.CommandHelp;
+import Commands.CommandRemoveById;
 import Commands.CommandShow;
 import Commands.CommandShuffle;
 import Managers.CollectionManager;
@@ -26,6 +28,8 @@ public class Main {
             commandManager.register("add", new CommandAdd(inputManager, collectionManager));
             commandManager.register("show", new CommandShow(inputManager, collectionManager));
             commandManager.register("shuffle", new CommandShuffle(inputManager, collectionManager));
+            commandManager.register("clear", new CommandClear(collectionManager));
+            commandManager.register("remove_by_id", new CommandRemoveById(collectionManager));
         
             while(true) {
                 System.out.print("> ");

@@ -28,6 +28,19 @@ public class CollectionManager {
         return new LinkedList<>(collection);
     }
 
+    public synchronized void clearAll() {
+        collection.clear();
+    }
+
+    public synchronized void removeById(int id) {
+        for (SpaceMarine m : collection) {
+            if (m.getId() == id) {
+                collection.remove(m);
+                return;
+            }
+        }
+    }
+
     public void shuffle() {
         Collections.shuffle(collection);
     }

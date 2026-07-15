@@ -10,6 +10,7 @@ import Commands.Command;
 
 public class CommandManager {
     private final Map<String, Command> commandBox = new HashMap<>();
+    // TODO: конструктор должен принимать HistoryManager с Main и в executeCommand получать команды в сторию
 
     public void register(String commandName, Command command) {
         commandBox.put(commandName, command);
