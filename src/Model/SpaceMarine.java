@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import Exception.ValidationException;
 import Tools.Validator;
 
-public class SpaceMarine implements Comparable {
+public class SpaceMarine implements Comparable<SpaceMarine> {
     private int id;
     private String name;
     private Coordinates coordinates;
@@ -85,7 +85,7 @@ public class SpaceMarine implements Comparable {
                 + meleeWeapon + ", chapter=" + chapter + "]";
     }
 
-    // TODO: переопредели ть самому, узнать требуется ли знание в интерпрайсе\
+    // TODO: переопределить самому, узнать требуется ли знание в интерпрайсе\
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -146,11 +146,13 @@ public class SpaceMarine implements Comparable {
         return true;
     }
 
-    // TODO: Вспомнить как переопределять
     @Override
-    public int compareTo(Object o) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'compareTo'");
+    public int compareTo(SpaceMarine that) {
+        if (this.health > that.health) {
+            return 1;
+        } else {
+            return -1;
+        }
     }
     
 }

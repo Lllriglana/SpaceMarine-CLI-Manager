@@ -3,7 +3,6 @@ package Managers;
 import java.io.BufferedReader;
 import java.io.IOException;
 
-
 import Exception.ValidationException;
 import Model.AstartesCategory;
 import Model.Chapter;
@@ -21,8 +20,6 @@ public class InputManager {
     }
 
     public SpaceMarine buildSpaceMarine() {
-        System.out.println("--- Создание нового SpaceMarine ---");
-
         String Name = askName();
         Coordinates coordinates = askCoordinates();
         Double health = askHealth();
@@ -59,10 +56,18 @@ public class InputManager {
         while (true) {
             try {
                 System.out.print("Введите координату X: ");
-                Double inputX = Double.parseDouble(br.readLine().trim());
+                String inputx = br.readLine().trim();
+                if (inputx.isBlank()) {
+                    throw new ValidationException("Координата X не может быть пустой.");
+                }
+                Double inputX = Double.parseDouble(inputx);
 
                 System.out.print("Введите координату Y: ");
-                Float inputY = Float.parseFloat(br.readLine().trim());
+                String inputy = br.readLine().trim();
+                if (inputy.isBlank()) { // TODO нужна ли проверка на null?
+                    throw new ValidationException("Координата Y не может быть пустой.");
+                }
+                Float inputY = Float.parseFloat(inputy);
                 
                 return new Coordinates(inputX, inputY);
             } catch (NumberFormatException e) {
@@ -152,7 +157,7 @@ public class InputManager {
                 String inputName = br.readLine().trim();
                 
                 if (inputName.isBlank()) {
-                    throw new ValidationException("Имя не может быть пустым");
+                    throw new ValidationException("Имя не может быть пустым.");
                 }
 
                 System.out.print("Общая численность братьев по оружию в этом ордене: ");

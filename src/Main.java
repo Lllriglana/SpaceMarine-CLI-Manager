@@ -3,12 +3,14 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import Commands.CommandAdd;
+import Commands.CommandAddIfMin;
 import Commands.CommandClear;
 import Commands.CommandExit;
 import Commands.CommandHelp;
 import Commands.CommandRemoveById;
 import Commands.CommandShow;
 import Commands.CommandShuffle;
+import Commands.CommandUpateId;
 import Managers.CollectionManager;
 import Managers.CommandManager; // местный инвокер
 import Managers.InputManager;
@@ -30,7 +32,9 @@ public class Main {
             commandManager.register("shuffle", new CommandShuffle(inputManager, collectionManager));
             commandManager.register("clear", new CommandClear(collectionManager));
             commandManager.register("remove_by_id", new CommandRemoveById(collectionManager));
-        
+            commandManager.register("update", new CommandUpateId(inputManager, collectionManager));
+            commandManager.register("add_if_min", new CommandAddIfMin(inputManager, collectionManager));
+            
             while(true) {
                 System.out.print("> ");
                 String input = br.readLine();

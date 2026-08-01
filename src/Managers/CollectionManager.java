@@ -5,6 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
+import Exception.ValidationException;
 import Model.SpaceMarine;
 
 public class CollectionManager {
@@ -24,6 +25,11 @@ public class CollectionManager {
         collection.add(m);
     }
 
+    public synchronized void addWithId(SpaceMarine m, int id) {
+        m.setId(id);
+        collection.add(m);
+    }
+
     public synchronized List<SpaceMarine> getAll() {
         return new LinkedList<>(collection);
     }
@@ -32,13 +38,14 @@ public class CollectionManager {
         collection.clear();
     }
 
-    public synchronized void removeById(int id) {
+    public synchronized boolean removeById(int id) {
         for (SpaceMarine m : collection) {
             if (m.getId() == id) {
                 collection.remove(m);
-                return;
             }
+            return true;
         }
+        return false;
     }
 
     public void shuffle() {

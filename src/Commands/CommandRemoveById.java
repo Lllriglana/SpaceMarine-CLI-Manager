@@ -12,7 +12,13 @@ public class CommandRemoveById implements Command {
     @Override
     public void execute(String[] args) {
         int id = Integer.parseInt(args[0]);
-        collectionManager.removeById(id);
+        boolean flag = collectionManager.removeById(id);
+        
+        if (!flag) {
+            System.out.println("Элемент id=" + id + " не найден.");
+            return;
+        }
+
         System.out.println("Объект с id='" + id + "' удален.");
     }
 }

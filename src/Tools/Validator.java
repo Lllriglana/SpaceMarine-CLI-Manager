@@ -47,7 +47,7 @@ public class Validator {
             throw new ValidationException("Ошибка: Поле '" + fieldName + "' должно быть больше нуля.");
         }
         if (val > max) {
-            throw new ValidationException("Ошибка: Поле '" + fieldName + "' должно быть больше " + max + ".");
+            throw new ValidationException("Ошибка: Поле '" + fieldName + "' должно быть больше не больше " + max + ".");
         }
         return val;
     }

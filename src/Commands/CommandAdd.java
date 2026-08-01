@@ -16,6 +16,7 @@ public class CommandAdd implements Command {
 
     @Override
     public void execute(String[] args) {
+        System.out.println("--- Создание нового SpaceMarine ---");
         collectionManager.add(inputManager.buildSpaceMarine());
         System.out.println("--- SpaceMarine успешно создан ---");
     }
