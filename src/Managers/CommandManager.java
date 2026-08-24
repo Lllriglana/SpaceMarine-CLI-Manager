@@ -29,6 +29,7 @@ public class CommandManager {
         } catch (Exception e) {
             System.out.println("Произошла ошибка при выполнении " + e.getMessage());
         }
+        
     }
 
     public Map<String, Command> getCommands() {

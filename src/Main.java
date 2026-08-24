@@ -5,6 +5,7 @@ import java.io.InputStreamReader;
 import Commands.CommandAdd;
 import Commands.CommandAddIfMin;
 import Commands.CommandClear;
+import Commands.CommandExecuteScript;
 import Commands.CommandExit;
 import Commands.CommandHelp;
 import Commands.CommandRemoveById;
@@ -13,6 +14,7 @@ import Commands.CommandShuffle;
 import Commands.CommandUpateId;
 import Managers.CollectionManager;
 import Managers.CommandManager; // местный инвокер
+import Managers.FileManager;
 import Managers.InputManager;
 import Tools.CommandParser;
 import Tools.ParsedCommand;
@@ -23,6 +25,7 @@ public class Main {
             CommandManager commandManager = new CommandManager();
             InputManager inputManager = new InputManager(br);
             CollectionManager collectionManager = new CollectionManager();
+            FileManager fileManager = new FileManager();
 
             System.out.println("Система готова. Введите 'help' для получения списка доступных команд.");
             commandManager.register("help", new CommandHelp());
@@ -34,6 +37,7 @@ public class Main {
             commandManager.register("remove_by_id", new CommandRemoveById(collectionManager));
             commandManager.register("update", new CommandUpateId(inputManager, collectionManager));
             commandManager.register("add_if_min", new CommandAddIfMin(inputManager, collectionManager));
+            commandManager.register("execute_script", new CommandExecuteScript(fileManager, commandManager));
             
             while(true) {
                 System.out.print("> ");

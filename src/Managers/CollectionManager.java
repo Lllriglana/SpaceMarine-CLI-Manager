@@ -5,7 +5,6 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import Exception.ValidationException;
 import Model.SpaceMarine;
 
 public class CollectionManager {
@@ -43,7 +42,6 @@ public class CollectionManager {
             if (m.getId() == id) {
                 collection.remove(m);
             }
-            return true;
         }
         return false;
     }
