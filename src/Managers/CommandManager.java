@@ -10,7 +10,12 @@ import Commands.Command;
 
 public class CommandManager {
     private final Map<String, Command> commandBox = new HashMap<>();
-    // TODO: конструктор должен принимать HistoryManager с Main и в executeCommand получать команды в сторию
+    HistoryManager historyManager;
+    // TODO: конструктор должен принимать HistoryManager с Main и в executeCommand получать команды
+
+    public CommandManager(HistoryManager historyManager) {
+        this.historyManager = historyManager;
+    }
 
     public void register(String commandName, Command command) {
         commandBox.put(commandName, command);
@@ -26,13 +31,14 @@ public class CommandManager {
 
         try {
             command.execute(args);
+            historyManager.add(commandName);
         } catch (Exception e) {
             System.out.println("Произошла ошибка при выполнении " + e.getMessage());
         }
         
     }
 
-    public Map<String, Command> getCommands() {
-        return commandBox;
-    }
+    // public Map<String, Command> getCommands() {
+    //     return commandBox;
+    // }
 }

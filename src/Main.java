@@ -8,6 +8,8 @@ import Commands.CommandClear;
 import Commands.CommandExecuteScript;
 import Commands.CommandExit;
 import Commands.CommandHelp;
+import Commands.CommandHistory;
+import Commands.CommandInfo;
 import Commands.CommandRemoveById;
 import Commands.CommandShow;
 import Commands.CommandShuffle;
@@ -15,6 +17,7 @@ import Commands.CommandUpateId;
 import Managers.CollectionManager;
 import Managers.CommandManager; // местный инвокер
 import Managers.FileManager;
+import Managers.HistoryManager;
 import Managers.InputManager;
 import Tools.CommandParser;
 import Tools.ParsedCommand;
@@ -22,7 +25,8 @@ import Tools.ParsedCommand;
 public class Main {
     public static void main(String[] args) {
         try(BufferedReader br = new BufferedReader(new InputStreamReader(System.in))) {
-            CommandManager commandManager = new CommandManager();
+            HistoryManager historyManager = new HistoryManager();
+            CommandManager commandManager = new CommandManager(historyManager);
             InputManager inputManager = new InputManager(br);
             CollectionManager collectionManager = new CollectionManager();
             FileManager fileManager = new FileManager();
@@ -38,7 +42,9 @@ public class Main {
             commandManager.register("update", new CommandUpateId(inputManager, collectionManager));
             commandManager.register("add_if_min", new CommandAddIfMin(inputManager, collectionManager));
             commandManager.register("execute_script", new CommandExecuteScript(fileManager, commandManager));
-            
+            commandManager.register("info", new CommandInfo(collectionManager));
+            commandManager.register("history", new CommandHistory(historyManager));
+                        
             while(true) {
                 System.out.print("> ");
                 String input = br.readLine();

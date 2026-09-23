@@ -3,4 +3,3 @@ shuffle
 dsdsadsadsacac2
 remove_by_id 21
 show
-exit

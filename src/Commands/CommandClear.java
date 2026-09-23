@@ -2,7 +2,7 @@ package Commands;
 
 import Managers.CollectionManager;
 
-public class CommandClear implements Command{
+public class CommandClear implements Command {
     CollectionManager collectionManager;
 
     public CommandClear(CollectionManager collectionManager) {

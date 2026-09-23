@@ -1,7 +1,5 @@
 package Managers;
 
-import java.io.BufferedReader;
-import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -13,16 +11,18 @@ public class FileManager {
         Queue<String> queue = new ArrayDeque<>();
         Path path = Path.of("src", filePath);
 
-        try (BufferedReader br = Files.newBufferedReader(path, StandardCharsets.UTF_8)) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                line = line.trim();
-                if (line.isEmpty()) continue;
-                queue.add(line);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+        try {
+            for (String line : Files.readAllLines(path, StandardCharsets.UTF_8)) {
+                line = line.strip();
+
+                if (!line.isEmpty()) {
+                    queue.add(line);
+                }
+            } 
+        } catch (Exception e) {
+            System.out.println("Не удалось прочитать файл: " + path);
         }
+        
         return queue;
     }
 }

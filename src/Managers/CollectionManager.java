@@ -1,15 +1,17 @@
 package Managers;
 
 import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Locale;
 
 import Model.SpaceMarine;
 
 public class CollectionManager {
     private final List<SpaceMarine> collection = new LinkedList<>();;
-    private final ZonedDateTime initTime = ZonedDateTime.now();
+    private final String dateTime = ZonedDateTime.now().format(DateTimeFormatter.ofPattern("d MMMM yyyy'г. в' HH:mm (z)", new Locale("ru")));
     private int nextId = 1;
 
     public CollectionManager() {}
@@ -46,8 +48,12 @@ public class CollectionManager {
         return false;
     }
 
-    public void shuffle() {
+    public synchronized void shuffle() {
         Collections.shuffle(collection);
+    }
+
+    public synchronized void info() {
+        System.out.println("Информация о коллекции \nТип коллекции: " + collection.getClass().getSimpleName() + "\nДата инициализации: " +  dateTime + "\nКоличество элементов: " + collection.size());
     }
 
     public synchronized void syncNextId() {
