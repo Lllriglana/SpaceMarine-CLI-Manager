@@ -11,6 +11,8 @@ public class CommandSave implements Command {
 
     @Override
     public void execute(String[] args) {
-        jsonManager.save();
+        if (jsonManager.save()) {
+            System.out.println("Сохранение прошло успешно");
+        }
     }
 }

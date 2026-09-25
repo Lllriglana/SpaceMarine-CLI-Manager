@@ -7,9 +7,11 @@ import Commands.CommandAddIfMin;
 import Commands.CommandClear;
 import Commands.CommandExecuteScript;
 import Commands.CommandExit;
+import Commands.CommandFilterByWeaponType;
 import Commands.CommandHelp;
 import Commands.CommandHistory;
 import Commands.CommandInfo;
+import Commands.CommandPrintUniqueCategory;
 import Commands.CommandRemoveById;
 import Commands.CommandSave;
 import Commands.CommandShow;
@@ -17,6 +19,7 @@ import Commands.CommandShuffle;
 import Commands.CommandUpateId;
 import Managers.CollectionManager;
 import Managers.CommandManager; // местный инвокер
+import Managers.EnumManager;
 import Managers.FileManager;
 import Managers.HistoryManager;
 import Managers.InputManager;
@@ -33,6 +36,7 @@ public class Main {
             CollectionManager collectionManager = new CollectionManager();
             FileManager fileManager = new FileManager();
             JsonManager jsonManager = new JsonManager(collectionManager, br);
+            EnumManager enumManager = new EnumManager(collectionManager);
 
             System.out.println("Система готова. Введите 'help' для получения списка доступных команд.");
             commandManager.register("help", new CommandHelp());
@@ -48,6 +52,8 @@ public class Main {
             commandManager.register("info", new CommandInfo(collectionManager));
             commandManager.register("history", new CommandHistory(historyManager));
             commandManager.register("save", new CommandSave(jsonManager));
+            commandManager.register("filter_by_weapon_type", new CommandFilterByWeaponType(enumManager));
+            commandManager.register("print_unique_category", new CommandPrintUniqueCategory(enumManager));
                         
             while(true) {
                 System.out.print("> ");

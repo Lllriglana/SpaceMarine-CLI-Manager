@@ -21,16 +21,18 @@ public class JsonManager {
 
     }
 
-    public void save() {
+    public boolean save() {
         File file = askFileName();
         
-        if (file == null) return;
+        if (file == null) return false;
         
         try {
             mapper.writerWithDefaultPrettyPrinter()
                   .writeValue(file, collectionManager.getAll());
+            return true;
         } catch (IOException e) {
             System.out.println("Ошибка: не удалось записать коллекцию в файл");
+            return false;
         }
     }
 
