@@ -16,11 +16,13 @@ public class EnumManager {
     
     public List<SpaceMarine> filterByWeaponType(Weapon weapon) {
         List<SpaceMarine> marines = new LinkedList<>();
+
         for (SpaceMarine marine : collectionManager.getAll()) {
             if (marine.getWeapon() == weapon) {
                 marines.add(marine);
             }
         }
+
         if (!marines.isEmpty()) {
             return marines;
         } else {
@@ -30,6 +32,9 @@ public class EnumManager {
 
     public List<String> uniqueAstartesCategory() {
         List<String> marinesEnum = new LinkedList<>();
+        List<SpaceMarine> marines = collectionManager.getAll();
+        
+        if (marines.isEmpty()) return null;
 
         boolean flag1 = false;
         boolean flag2 = false;
@@ -37,7 +42,7 @@ public class EnumManager {
         boolean flag4 = false;
         boolean flag5 = false;
 
-        for (SpaceMarine marine : collectionManager.getAll()) {
+        for (SpaceMarine marine : marines) {
             if (marine.getCategory() == null) {
                 continue;
             }
@@ -76,8 +81,21 @@ public class EnumManager {
         } else {
             return null;
         }
-        
     }
 
-    
+    public Integer countLessThanWeaponType(Weapon weapon) {
+        List<SpaceMarine> marines = collectionManager.getAll();
+
+        if (marines.isEmpty()) return null;
+        int counter = 0;
+        
+        for (SpaceMarine marine : marines) {
+            if (marine != null 
+                && marine.getWeapon() != null 
+                && marine.getWeapon().compareTo(weapon) < 0) {
+                counter++;
+            }
+        } return counter;
+    }
+
 }

@@ -17,6 +17,7 @@ import Commands.CommandSave;
 import Commands.CommandShow;
 import Commands.CommandShuffle;
 import Commands.CommandUpateId;
+import Commands.CommandCountLessThanWeaponType;
 import Managers.CollectionManager;
 import Managers.CommandManager; // местный инвокер
 import Managers.EnumManager;
@@ -39,6 +40,7 @@ public class Main {
             EnumManager enumManager = new EnumManager(collectionManager);
 
             System.out.println("Система готова. Введите 'help' для получения списка доступных команд.");
+            
             commandManager.register("help", new CommandHelp());
             commandManager.register("exit", new CommandExit());
             commandManager.register("add", new CommandAdd(inputManager, collectionManager));
@@ -54,6 +56,7 @@ public class Main {
             commandManager.register("save", new CommandSave(jsonManager));
             commandManager.register("filter_by_weapon_type", new CommandFilterByWeaponType(enumManager));
             commandManager.register("print_unique_category", new CommandPrintUniqueCategory(enumManager));
+            commandManager.register("count_less_than_weapon_type", new CommandCountLessThanWeaponType(enumManager));
                         
             while(true) {
                 System.out.print("> ");
