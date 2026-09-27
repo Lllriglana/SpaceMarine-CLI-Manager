@@ -2,3 +2,4 @@ Fast/
 /target/
 /data/*
 !/data/default.json
+.DS_Store
