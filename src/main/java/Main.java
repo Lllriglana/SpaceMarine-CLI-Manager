@@ -38,7 +38,35 @@ public class Main {
             FileManager fileManager = new FileManager();
             JsonManager jsonManager = new JsonManager(collectionManager, br);
             EnumManager enumManager = new EnumManager(collectionManager);
-            jsonManager.loader(args);
+
+            // Эта конструкция создана исключительно для win-версии проекта
+            if (args.length > 0) {
+                jsonManager.loader(args);
+            } else {
+                boolean interactive = System.console() != null;
+            
+                if (interactive) System.out.print("\033[s");
+
+                System.out.print("Введите имя .json файла с которого будет произведен запуск " + "(Нажмите ENTER для запуска с 'default.json'): ");
+                System.out.flush();
+                
+                String nameFile = br.readLine();
+
+                if (nameFile == null) {
+                    return;
+                }
+
+                if (interactive) {
+                    System.out.print("\033[u");
+                    System.out.print("\033[J");
+                }
+
+                if (nameFile.isBlank()) {
+                    jsonManager.loader(new String[0]);
+                } else {
+                    jsonManager.loader(new String[]{nameFile.strip()});
+                }
+            }
 
             System.out.println("Система готова. Введите 'help' для получения списка доступных команд.");
             

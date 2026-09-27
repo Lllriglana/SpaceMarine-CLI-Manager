@@ -66,7 +66,7 @@ jobs:
         run: |
           $env:JAVA_HOME = ""
           $env:PATH = "$env:SystemRoot\System32"
-          "info" | & ".\SpaceMarineCLI.exe"
+          @("", "info") | & ".\SpaceMarineCLI.exe"
           if ($LASTEXITCODE -ne 0) {
             throw "Application failed to start"
           }
