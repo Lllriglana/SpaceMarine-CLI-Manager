@@ -1,0 +1,79 @@
+name: Build Windows app
+
+on:
+  push:
+    branches:
+      - windows-package
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: windows-latest
+
+    defaults:
+      run:
+        shell: pwsh
+
+    steps:
+      - name: Download project
+        uses: actions/checkout@v6
+
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+          architecture: x64
+          cache: maven
+
+      - name: Build application
+        run: mvn -B package
+
+      - name: Collect libraries
+        run: >
+          mvn -B
+          org.apache.maven.plugins:maven-dependency-plugin:3.11.0:copy-dependencies
+          "-DoutputDirectory=target/package-input"
+          "-DincludeScope=runtime"
+
+      - name: Copy application JAR
+        run: |
+          Copy-Item "target/space-marine-cli-manager-1.0-SNAPSHOT.jar" "target/package-input/"
+
+      - name: Create Windows application
+        run: >
+          jpackage
+          --type app-image
+          --name SpaceMarineCLI
+          --input target/package-input
+          --main-jar space-marine-cli-manager-1.0-SNAPSHOT.jar
+          --main-class Main
+          --dest dist
+          --win-console
+          --java-options "-Dfile.encoding=UTF-8"
+
+      - name: Add launcher and demo data
+        run: |
+          Copy-Item "packaging/windows/Start.cmd" "dist/SpaceMarineCLI/Start.cmd"
+          New-Item -ItemType Directory -Force "dist/SpaceMarineCLI/data"
+          Copy-Item "data/default.json" "dist/SpaceMarineCLI/data/default.json"
+
+      - name: Check bundled application
+        working-directory: dist/SpaceMarineCLI
+        run: |
+          $env:JAVA_HOME = ""
+          $env:PATH = "$env:SystemRoot\System32"
+          "info" | & ".\SpaceMarineCLI.exe"
+          if ($LASTEXITCODE -ne 0) {
+            throw "Application failed to start"
+          }
+
+      - name: Upload Windows archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: SpaceMarineCLI-windows-x64
+          path: dist/SpaceMarineCLI/
+          if-no-files-found: error
