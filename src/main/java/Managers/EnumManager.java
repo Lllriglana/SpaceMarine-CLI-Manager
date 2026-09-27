@@ -91,8 +91,7 @@ public class EnumManager {
         
         for (SpaceMarine marine : marines) {
             if (marine != null 
-                && marine.getWeapon() != null 
-                && marine.getWeapon().compareTo(weapon) < 0) {
+                && marine.getWeapon() != null && marine.getWeapon().compareTo(weapon) < 0) {
                 counter++;
             }
         } return counter;

@@ -2,6 +2,9 @@ package Model;
 
 import java.time.LocalDate;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import Exception.ValidationException;
 import Tools.Validator;
 
@@ -20,17 +23,41 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
         int id,
         String name,
         Coordinates coordinates,
-        LocalDate creationDate,
         double health,
         AstartesCategory category,
         Weapon weapon,
         MeleeWeapon meleeWeapon,
         Chapter chapter
     ) throws ValidationException {
+        this(
+            id,
+            name,
+            coordinates,
+            LocalDate.now(),
+            health,
+            category,
+            weapon,
+            meleeWeapon,
+            chapter
+        ); // сцепление констркторов. вроде он обращается к конструктору ниже и "модифицирует" его.
+    }
+
+    @JsonCreator
+    public SpaceMarine(
+        @JsonProperty("id") int id,
+        @JsonProperty("name") String name,
+        @JsonProperty("coordinates") Coordinates coordinates,
+        @JsonProperty("creationDate") LocalDate creationDate,
+        @JsonProperty("health") double health,
+        @JsonProperty("category") AstartesCategory category,
+        @JsonProperty("weapon") Weapon weapon,
+        @JsonProperty("meleeWeapon") MeleeWeapon meleeWeapon,
+        @JsonProperty("chapter") Chapter chapter
+    ) throws ValidationException {
         this.id = Validator.requireValidId(id);
         this.name = Validator.requireSpecial(name, "Name");
         this.coordinates = Validator.requireSpecial(coordinates, "Coordinates");
-        this.creationDate = LocalDate.now();
+        this.creationDate = creationDate;
         this.health = Validator.healthRequireGreaterThanZero(health, "Health");
         this.category = category;
         this.weapon = weapon;
@@ -148,11 +175,7 @@ public class SpaceMarine implements Comparable<SpaceMarine> {
 
     @Override
     public int compareTo(SpaceMarine that) {
-        if (this.health > that.health) {
-            return 1;
-        } else {
-            return -1;
-        }
+        return Double.compare(this.health, that.health);
     }
     
 }

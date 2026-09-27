@@ -10,11 +10,15 @@ import java.util.Locale;
 import Model.SpaceMarine;
 
 public class CollectionManager {
-    private final List<SpaceMarine> collection = new LinkedList<>();;
+    private List<SpaceMarine> collection = new LinkedList<>();;
     private final String dateTime = ZonedDateTime.now().format(DateTimeFormatter.ofPattern("d MMMM yyyy'г. в' HH:mm (z)", new Locale("ru")));
     private int nextId = 1;
 
     public CollectionManager() {}
+
+    public synchronized void setCollection(List<SpaceMarine> newCollection) {
+        this.collection = newCollection;
+    }
 
     public synchronized void add(SpaceMarine m) {
         if (m.getId() <= 0) {

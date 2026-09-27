@@ -1,3 +1,4 @@
 Fast/
 /target/
-/data/
+/data/*
+!/data/default.json

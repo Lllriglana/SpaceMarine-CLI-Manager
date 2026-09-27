@@ -38,6 +38,7 @@ public class Main {
             FileManager fileManager = new FileManager();
             JsonManager jsonManager = new JsonManager(collectionManager, br);
             EnumManager enumManager = new EnumManager(collectionManager);
+            jsonManager.loader(args);
 
             System.out.println("Система готова. Введите 'help' для получения списка доступных команд.");
             

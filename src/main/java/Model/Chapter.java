@@ -2,6 +2,9 @@ package Model;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import Exception.ValidationException;
 import Tools.Validator;
 
@@ -9,9 +12,17 @@ public class Chapter {
     private String name;
     private int marinesCount;
     
-    public Chapter(String name, int marinesCount) throws ValidationException {
+    @JsonCreator 
+    public Chapter(
+        @JsonProperty("name") String name, 
+        @JsonProperty("marinesCount") int marinesCount
+    ) throws ValidationException {
         this.name = Validator.requireSpecial(name, "Name");
-        this.marinesCount = Validator.requireLessOrEqual(marinesCount, 1000, "Marines Count");
+        this.marinesCount = Validator.requireLessOrEqual(
+            marinesCount, 
+            1000, 
+            "Marines Count"
+        );
     }
 
 /* 

@@ -1,0 +1,801 @@
+[ {
+  "id" : 1,
+  "name" : "Marneus Calgar",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : "POWER_FIST",
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 2,
+  "name" : "Cato Sicarius",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 3,
+  "name" : "Varro Tigurius",
+  "coordinates" : {
+    "x" : 8.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "LIBRARIAN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 4,
+  "name" : "Ortan Cassius",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "CHAPLAIN",
+  "weapon" : "COMBI_FLAMER",
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 5,
+  "name" : "Torias Telion",
+  "coordinates" : {
+    "x" : 16.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "SCOUT",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 6,
+  "name" : "Antaro Chronus",
+  "coordinates" : {
+    "x" : 20.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 7,
+  "name" : "Uriel Ventris",
+  "coordinates" : {
+    "x" : 24.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 8,
+  "name" : "Demetrian Titus",
+  "coordinates" : {
+    "x" : 28.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 9,
+  "name" : "Gadriel",
+  "coordinates" : {
+    "x" : 32.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 10,
+  "name" : "Chairon",
+  "coordinates" : {
+    "x" : 36.0,
+    "y" : 0.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Ultramarines",
+    "marinesCount" : 10
+  }
+}, {
+  "id" : 11,
+  "name" : "Logan Grimnar",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 12,
+  "name" : "Ragnar Blackmane",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 13,
+  "name" : "Bjorn the Fell-Handed",
+  "coordinates" : {
+    "x" : 8.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 14,
+  "name" : "Ulrik the Slayer",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "CHAPLAIN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 15,
+  "name" : "Njal Stormcaller",
+  "coordinates" : {
+    "x" : 16.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "LIBRARIAN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 16,
+  "name" : "Arjac Rockfist",
+  "coordinates" : {
+    "x" : 20.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 17,
+  "name" : "Lukas the Trickster",
+  "coordinates" : {
+    "x" : 24.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "LIGHTING_CLAW",
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 18,
+  "name" : "Canis Wolfborn",
+  "coordinates" : {
+    "x" : 28.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "LIGHTING_CLAW",
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 19,
+  "name" : "Harald Deathwolf",
+  "coordinates" : {
+    "x" : 32.0,
+    "y" : 20.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Space Wolves",
+    "marinesCount" : 9
+  }
+}, {
+  "id" : 20,
+  "name" : "Dante",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 21,
+  "name" : "Mephiston",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "LIBRARIAN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 22,
+  "name" : "Astorath",
+  "coordinates" : {
+    "x" : 8.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "CHAPLAIN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 23,
+  "name" : "Lemartes",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "CHAPLAIN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 24,
+  "name" : "Corbulo",
+  "coordinates" : {
+    "x" : 16.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 25,
+  "name" : "Erasmus Tycho",
+  "coordinates" : {
+    "x" : 20.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 26,
+  "name" : "Arenos Karlaen",
+  "coordinates" : {
+    "x" : 24.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 27,
+  "name" : "Rafen",
+  "coordinates" : {
+    "x" : 28.0,
+    "y" : 40.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Angels",
+    "marinesCount" : 8
+  }
+}, {
+  "id" : 28,
+  "name" : "Azrael",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 60.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Dark Angels",
+    "marinesCount" : 5
+  }
+}, {
+  "id" : 29,
+  "name" : "Belial",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 60.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Dark Angels",
+    "marinesCount" : 5
+  }
+}, {
+  "id" : 30,
+  "name" : "Sammael",
+  "coordinates" : {
+    "x" : 8.0,
+    "y" : 60.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Dark Angels",
+    "marinesCount" : 5
+  }
+}, {
+  "id" : 31,
+  "name" : "Ezekiel",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 60.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "LIBRARIAN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Dark Angels",
+    "marinesCount" : 5
+  }
+}, {
+  "id" : 32,
+  "name" : "Asmodai",
+  "coordinates" : {
+    "x" : 16.0,
+    "y" : 60.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "CHAPLAIN",
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Dark Angels",
+    "marinesCount" : 5
+  }
+}, {
+  "id" : 33,
+  "name" : "Kaldor Draigo",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 80.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Grey Knights",
+    "marinesCount" : 4
+  }
+}, {
+  "id" : 34,
+  "name" : "Arvann Stern",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 80.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Grey Knights",
+    "marinesCount" : 4
+  }
+}, {
+  "id" : 35,
+  "name" : "Garran Crowe",
+  "coordinates" : {
+    "x" : 8.0,
+    "y" : 80.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Grey Knights",
+    "marinesCount" : 4
+  }
+}, {
+  "id" : 36,
+  "name" : "Aldrik Voldus",
+  "coordinates" : {
+    "x" : 12.0,
+    "y" : 80.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Grey Knights",
+    "marinesCount" : 4
+  }
+}, {
+  "id" : 37,
+  "name" : "High Marshal Helbrecht",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 100.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Black Templars",
+    "marinesCount" : 3
+  }
+}, {
+  "id" : 38,
+  "name" : "Merek Grimaldus",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 100.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "CHAPLAIN",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Black Templars",
+    "marinesCount" : 3
+  }
+}, {
+  "id" : 39,
+  "name" : "Bayard",
+  "coordinates" : {
+    "x" : 8.0,
+    "y" : 100.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "Black Templars",
+    "marinesCount" : 3
+  }
+}, {
+  "id" : 40,
+  "name" : "Vulkan He'stan",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 120.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Salamanders",
+    "marinesCount" : 2
+  }
+}, {
+  "id" : 41,
+  "name" : "Adrax Agatone",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 120.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Salamanders",
+    "marinesCount" : 2
+  }
+}, {
+  "id" : 42,
+  "name" : "Malkaan Feirros",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 140.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Iron Hands",
+    "marinesCount" : 1
+  }
+}, {
+  "id" : 43,
+  "name" : "Darnath Lysander",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 160.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Imperial Fists",
+    "marinesCount" : 2
+  }
+}, {
+  "id" : 44,
+  "name" : "Tor Garadon",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 160.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_FIST",
+  "chapter" : {
+    "name" : "Imperial Fists",
+    "marinesCount" : 2
+  }
+}, {
+  "id" : 45,
+  "name" : "Kayvaan Shrike",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 180.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "LIGHTING_CLAW",
+  "chapter" : {
+    "name" : "Raven Guard",
+    "marinesCount" : 1
+  }
+}, {
+  "id" : 46,
+  "name" : "Kor'sarro Khan",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 200.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_BLADE",
+  "chapter" : {
+    "name" : "White Scars",
+    "marinesCount" : 2
+  }
+}, {
+  "id" : 47,
+  "name" : "Jubal Khan",
+  "coordinates" : {
+    "x" : 4.0,
+    "y" : 200.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "White Scars",
+    "marinesCount" : 2
+  }
+}, {
+  "id" : 48,
+  "name" : "Gabriel Seth",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 220.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Flesh Tearers",
+    "marinesCount" : 1
+  }
+}, {
+  "id" : 49,
+  "name" : "Pedro Kantor",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 240.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : null,
+  "weapon" : null,
+  "meleeWeapon" : "POWER_FIST",
+  "chapter" : {
+    "name" : "Crimson Fists",
+    "marinesCount" : 1
+  }
+}, {
+  "id" : 50,
+  "name" : "Gabriel Angelos",
+  "coordinates" : {
+    "x" : 0.0,
+    "y" : 260.0
+  },
+  "creationDate" : "2026-09-27",
+  "health" : 100.0,
+  "category" : "TERMINATOR",
+  "weapon" : null,
+  "meleeWeapon" : null,
+  "chapter" : {
+    "name" : "Blood Ravens",
+    "marinesCount" : 1
+  }
+} ]
